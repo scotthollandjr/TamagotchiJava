@@ -3,14 +3,19 @@ import java.util.ArrayList;
 public class Tamagotchi {
   private String mName;
   private Integer mPoopCount;
-  private Integer mHungerLevel;
+  private Integer mFullnessLevel;
   private Integer mEnergyLevel;
   private Integer mHappinessLevel;
 
-  public Tamagotchi(String name, String poopCount, String hungerLevel, String energyLevel, String happinessLevel) {
+  public Tamagotchi(String name, String poopCount, String fullnessLevel, String energyLevel, String happinessLevel) {
+    // public static final Integer MAX_POOP = 5;
+    // public static final Integer MAX_HUNGER = 10;
+    // public static final Integer MAX_ENERGY = 10;
+    // public static final Integer MAX_HAPPY = 10;
+
     mName = name;
     mPoopCount = Integer.parseInt(poopCount);
-    mHungerLevel = Integer.parseInt(hungerLevel);
+    mFullnessLevel = Integer.parseInt(fullnessLevel);
     mEnergyLevel = Integer.parseInt(energyLevel);
     mHappinessLevel = Integer.parseInt(happinessLevel);
   }
@@ -23,8 +28,8 @@ public class Tamagotchi {
     return mPoopCount;
   }
 
-  public Integer getHungerLevel() {
-    return mHungerLevel;
+  public Integer getFullnessLevel() {
+    return mFullnessLevel;
   }
 
   public Integer getEnergyLevel() {
@@ -37,17 +42,29 @@ public class Tamagotchi {
 
   public void feedTamagotchi() {
     // poop
-    mHungerLevel -= 1;
+    mFullnessLevel += 1;
     mEnergyLevel += 2;
     mHappinessLevel += 1;
   }
 
   public void playWithTamagotchi() {
     // poop
-    mHungerLevel += 2;
+    mFullnessLevel -= 2;
     mEnergyLevel -= 2;
     mHappinessLevel += 2;
   }
 
+  public void putToBedTamagotchi() {
+    // poop
+    mFullnessLevel -= 3;
+    mEnergyLevel += 5;
+    mHappinessLevel -= 2;
+  }
 
+  public void cleanTamagotchi() {
+    // poop goes to 0
+    mFullnessLevel += 2;
+    mEnergyLevel -= 2;
+    mHappinessLevel -= 2;
+  }
 }
