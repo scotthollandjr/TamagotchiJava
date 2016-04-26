@@ -12,17 +12,43 @@ public class TamagotchiTest {
   @Test
   public void Tamagotchi_getPoopCount_String() {
     Tamagotchi myTamagotchi = new Tamagotchi("Pepe", "0", "5", "6", "7");
-    assertEquals("0", myTamagotchi.getPoopCount());
+    Integer expected = 0;
+    assertEquals(expected, myTamagotchi.getPoopCount());
   }
   @Test
   public void Tamagotchi_getHungerLevel_String() {
     Tamagotchi myTamagotchi = new Tamagotchi("Pepe", "0", "5", "6", "7");
-    assertEquals("5", myTamagotchi.getHungerLevel());
+    Integer expected = 5;
+    assertEquals(expected, myTamagotchi.getHungerLevel());
   }
   @Test
   public void Tamagotchi_getEnergyLevel_String() {
     Tamagotchi myTamagotchi = new Tamagotchi("Pepe", "0", "5", "6", "7");
-    assertEquals("6", myTamagotchi.getEnergyLevel());
+    Integer expected = 6;
+    assertEquals(expected, myTamagotchi.getEnergyLevel());
   }
-
+  @Test
+  public void Tamagotchi_getHappinessLevel_String() {
+    Tamagotchi myTamagotchi = new Tamagotchi("Pepe", "0", "5", "6", "7");
+    Integer expected = 7;
+    assertEquals(expected, myTamagotchi.getHappinessLevel());
+  }
+  @Test
+  public void Tamagotchi_getFeedTamagotchi_Integer() {
+    Tamagotchi myTamagotchi = new Tamagotchi("Pepe", "0", "5", "6", "7");
+    myTamagotchi.feedTamagotchi();
+    assertEquals((Integer)0, myTamagotchi.getPoopCount());
+    assertEquals((Integer)4, myTamagotchi.getHungerLevel());
+    assertEquals((Integer)8, myTamagotchi.getEnergyLevel());
+    assertEquals((Integer)8, myTamagotchi.getHappinessLevel());
+  }
+  @Test
+  public void Tamagotchi_getPlayWithTamagotchi_Integer() {
+    Tamagotchi myTamagotchi = new Tamagotchi("Pepe", "0", "5", "6", "7");
+    myTamagotchi.playWithTamagotchi();
+    assertEquals((Integer)0, myTamagotchi.getPoopCount());
+    assertEquals((Integer)7, myTamagotchi.getHungerLevel());
+    assertEquals((Integer)4, myTamagotchi.getEnergyLevel());
+    assertEquals((Integer)9, myTamagotchi.getHappinessLevel());
+  }
 }
