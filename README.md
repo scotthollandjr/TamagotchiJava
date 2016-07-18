@@ -21,4 +21,3 @@ A Java web application that emulates a Tamagotchi, the popular 90's handheld dig
 MIT License
 
 Copyright (c) 2016 Scott Holland & Jeff Hackford
-
